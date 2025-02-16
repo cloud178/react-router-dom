@@ -1,0 +1,9 @@
+.sneakers {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.sneaker {
+    height: 200px;
+}
