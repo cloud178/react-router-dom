@@ -8,11 +8,12 @@ import {Error404} from "./components/pages/Error404";
 import {S} from "./components/pages/_styles";
 import {Model} from "./components/pages/Model";
 
-const PATH = {
+export const PATH = {
     PAGE1: '/adidas',
     PAGE2: '/puma',
     PAGE3: '/abibas',
     PAGE_ERROR_404: '/page/error404',
+    PAGE_ADIDAS_ID: '/adidas/:id',
 } as const
 
 function App() {
@@ -41,14 +42,14 @@ function App() {
                         <Route path={PATH.PAGE2} element={<Puma/>}/>
                         <Route path={PATH.PAGE3} element={<Abibas/>}/>
 
-                        <Route path={'/adidas/:id'} element={<Model/>}/>
+                        <Route path={PATH.PAGE_ADIDAS_ID} element={<Model/>}/>
 
                         {/*Пример чтобы показать что можно несколько параметров передавать*/}
                         {/*<Route path={'/adidas/:id/:id2'} element={<Model/>}/>*/}
 
                         {/*два варианта обработки неправильных запросов, это либо всегда в адресной строке менять на error404 либо оставлять ту белиберду что ввёл пользователь*/}
                         {/*1 вариант*/}
-                        <Route path="/*" element={<Navigate to="/page/error404"/>}/>
+                        <Route path="/*" element={<Navigate to={PATH.PAGE_ERROR_404}/>}/>
                         <Route path={PATH.PAGE_ERROR_404} element={<Error404/>}/>
                         {/*2 вариант*/}
                         {/*<Route path={'/*'} element={<Error404/>}/>*/}
