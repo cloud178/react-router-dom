@@ -13,7 +13,7 @@ export const PATH = {
     PAGE2: '/puma',
     PAGE3: '/abibas',
     PAGE_ERROR_404: '/page/error404',
-    PAGE_ADIDAS_ID: '/adidas/:id',
+    PAGE_SNEAKERS_MODEL_ID: '/:model/:id',
 } as const
 
 function App() {
@@ -42,7 +42,7 @@ function App() {
                         <Route path={PATH.PAGE2} element={<Puma/>}/>
                         <Route path={PATH.PAGE3} element={<Abibas/>}/>
 
-                        <Route path={PATH.PAGE_ADIDAS_ID} element={<Model/>}/>
+                        <Route path={PATH.PAGE_SNEAKERS_MODEL_ID} element={<Model/>}/>
 
                         {/*Пример чтобы показать что можно несколько параметров передавать*/}
                         {/*<Route path={'/adidas/:id/:id2'} element={<Model/>}/>*/}
